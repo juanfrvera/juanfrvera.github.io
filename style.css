@@ -1,0 +1,11 @@
+div{
+	border-style:solid; 
+}
+#profile{
+	width: 40%;
+	float: left;
+}
+#description{
+	width: 50%;
+	float:right;
+}
