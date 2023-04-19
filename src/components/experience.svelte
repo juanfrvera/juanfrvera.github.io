@@ -1,10 +1,18 @@
-<h3 id="title">
-	<slot name="company" />
-</h3>
-<slot name="roles" />
+<div>
+	<h3 id="title">
+		<slot name="company" />
+	</h3>
+	<div><slot name="roles" /></div>
+	<div id="date"><slot name="date" /></div>
+	<slot />
+</div>
 
 <style>
 	#title {
 		margin: 0;
+		color: #283618;
+	}
+	#date {
+		color: #505a2e;
 	}
 </style>
