@@ -1,13 +1,33 @@
 <script>
 	import Experience from '../components/experience.svelte';
+	import Project from '../components/project.svelte';
 </script>
 
 <div id="container">
-    <h1>Juan Vera</h1>
+	<h1>Juan Vera</h1>
 	I am a Full Stack Web Developer with 3+ years of professional experience.
 
+	<h2>Projects</h2>
+	<div class="section">
+		<Project>
+			<span slot="name">Finances</span>
+			<span slot="techs">Svelte, AWS</span>
+			<div>
+				Keep a list of your accounts, the services you need to pay, and the debts you have to pay or
+				charge.
+			</div>
+		</Project>
+		<Project>
+			<span slot="name">Order Taker</span>
+			<span slot="techs">Angular, Node.Js, SQL</span>
+            <div>
+                Order anything from your favorite shop, generating an automatic message to send in WhatsApp.
+            </div>
+		</Project>
+	</div>
+
 	<h2>Experience</h2>
-	<div id="experiences">
+	<div class="section">
 		<Experience>
 			<span slot="company">DevSavant</span>
 			<span slot="roles">Full Stack Developer</span>
@@ -55,7 +75,7 @@
 	#container {
 		padding: 32px;
 	}
-	#experiences {
+	.section {
 		display: flex;
 		flex-direction: column;
 		row-gap: 16px;
