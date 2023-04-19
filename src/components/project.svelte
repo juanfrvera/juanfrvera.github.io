@@ -5,7 +5,9 @@
 	<div id="techs">
 		<slot name="techs" />
 	</div>
-	<slot />
+	<div id="description">
+		<slot />
+	</div>
 </div>
 
 <style>
@@ -15,5 +17,9 @@
 	}
 	#techs {
 		color: #505a2e;
+	}
+	#description {
+		text-align: justify;
+		text-justify: inter-word;
 	}
 </style>

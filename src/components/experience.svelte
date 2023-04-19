@@ -4,7 +4,9 @@
 	</h3>
 	<div><slot name="roles" /></div>
 	<div id="date"><slot name="date" /></div>
-	<slot />
+	<div id="description">
+		<slot />
+	</div>
 </div>
 
 <style>
@@ -14,5 +16,9 @@
 	}
 	#date {
 		color: #505a2e;
+	}
+	#description {
+		text-align: justify;
+		text-justify: inter-word;
 	}
 </style>
