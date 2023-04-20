@@ -1,3 +1,7 @@
+<script lang="ts">
+	export let githubUrl: string | undefined = undefined;
+</script>
+
 <div>
 	<h3 id="title">
 		<slot name="name" />
@@ -7,6 +11,11 @@
 	</div>
 	<div id="description">
 		<slot />
+	</div>
+	<div id="links">
+		{#if githubUrl}
+			<a href={githubUrl} target="_blank">GitHub</a>
+		{/if}
 	</div>
 </div>
 

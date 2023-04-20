@@ -3,13 +3,17 @@
 	import Project from '../components/project.svelte';
 </script>
 
+<svelte:head>
+	<title>Juan Vera</title>
+</svelte:head>
+
 <div id="container">
 	<h1>Juan Vera</h1>
 	I am a Full Stack Web Developer with 3+ years of professional experience.
 
 	<h2>Projects</h2>
 	<div class="section">
-		<Project>
+		<Project githubUrl="https://github.com/juanfrvera/finances">
 			<span slot="name">Finances</span>
 			<span slot="techs">Svelte, AWS</span>
 			<div>
@@ -20,9 +24,9 @@
 		<Project>
 			<span slot="name">Order Taker</span>
 			<span slot="techs">Angular, Node.Js, SQL</span>
-            <div>
-                Order anything from your favorite shop, generating an automatic message to send in WhatsApp.
-            </div>
+			<div>
+				Order anything from your favorite shop, generating an automatic message to send in WhatsApp.
+			</div>
 		</Project>
 	</div>
 
@@ -33,7 +37,7 @@
 			<span slot="roles">Full Stack Developer</span>
 			<span slot="date">Apr 2021 - Present</span>
 			<span>
-				I work in a multicultural team, communicating mainly in english. I collaborate with product
+				I work in a multicultural team, communicating mainly in English. I collaborate with product
 				managers and UI/UX designers to build innovative software solutions that improve customer
 				experience. We use a flexible schedule, which allows me to balance my work and personal
 				life, and I'm able to stay focused and achieve my objectives in a timely manner.
