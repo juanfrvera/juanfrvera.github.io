@@ -1,5 +1,6 @@
 <script>
-	import Experience from '../components/experience.svelte';
+	import Education from '../components/education.svelte';
+import Experience from '../components/experience.svelte';
 	import Project from '../components/project.svelte';
 </script>
 
@@ -68,6 +69,20 @@
 				users in multiple languages.
 			</span>
 		</Experience>
+	</div>
+
+	<h2>Education</h2>
+	<div class="section">
+		<Education>
+			<span slot="degree">Information Systems Engineer</span>
+			<span slot="date">March 2016 - Aug 2021</span>
+			<span slot="college">UTN Argentina</span>
+		</Education>
+		<Education>
+			<span slot="degree">Computer Technician</span>
+			<span slot="date">Mar 2009 - Dec 2015</span>
+			<span slot="college">EET C.M. Etchebarne Argentina</span>
+		</Education>
 	</div>
 </div>
 
