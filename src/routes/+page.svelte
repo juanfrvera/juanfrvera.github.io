@@ -21,8 +21,8 @@
 				charge.
 			</div>
 		</Project>
-		<Project>
-			<span slot="name">Order Taker</span>
+		<Project githubUrl="https://github.com/juanfrvera/encarga">
+			<span slot="name">Encarga</span>
 			<span slot="techs">Angular, Node.Js, SQL</span>
 			<div>
 				Order anything from your favorite shop, generating an automatic message to send in WhatsApp.
