@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let url: string | undefined = undefined;
 	export let githubUrl: string | undefined = undefined;
 </script>
 
@@ -13,6 +14,7 @@
 		<slot />
 	</div>
 	<div id="links">
+		{#if url}<a href={url} target="_blank">Web Page</a>{/if}
 		{#if githubUrl}
 			<a href={githubUrl} target="_blank">GitHub</a>
 		{/if}
@@ -30,5 +32,9 @@
 	#description {
 		text-align: justify;
 		text-justify: inter-word;
+	}
+	#links {
+		display: flex;
+		column-gap: 16px;
 	}
 </style>

@@ -1,6 +1,6 @@
 <script>
 	import Education from '../components/education.svelte';
-import Experience from '../components/experience.svelte';
+	import Experience from '../components/experience.svelte';
 	import Project from '../components/project.svelte';
 </script>
 
@@ -14,9 +14,9 @@ import Experience from '../components/experience.svelte';
 
 	<h2>Projects</h2>
 	<div class="section">
-		<Project githubUrl="https://github.com/juanfrvera/finances">
+		<Project githubUrl="https://github.com/juanfrvera/finances" url="https://juanvera.dev/finances">
 			<span slot="name">Finances</span>
-			<span slot="techs">Svelte, AWS</span>
+			<span slot="techs">Svelte, GitHub pages</span>
 			<div>
 				Keep a list of your accounts, the services you need to pay, and the debts you have to pay or
 				charge.
