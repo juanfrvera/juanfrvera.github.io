@@ -6,7 +6,7 @@
       <section id="main-info-section" class="section">
         <!-- Profile -->
         <div class="square">
-          <img class="profile" src="assets/mountains-cut.jpeg" />
+          <img class="profile-img" src="assets/mountains-cut.jpeg" />
         </div>
         <!-- About -->
         <div class="square info-square square-about">
@@ -124,8 +124,7 @@
   height: 400px;
 }
 
-.profile {
-  max-width: 400px;
+.profile-img {
   border-radius: 24px;
 }
 
@@ -154,12 +153,27 @@
   .square {
     max-width: 400px;
   }
+
+  .profile-img {
+    width: calc(40vw - 40px);
+    max-width: 400px;
+  }
 }
 
 @media (min-width: 992px) {
   .container {
     padding-left: 3rem !important;
     padding-right: 3rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #main-info-section {
+    flex-direction: column !important;
+  }
+
+  .profile-img {
+    width: calc(100% - 20px);
   }
 }
 
