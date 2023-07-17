@@ -9,7 +9,7 @@
           <img class="profile-img" src="assets/mountains-cut.jpeg" />
         </div>
         <!-- About -->
-        <div class="square info-square square-about">
+        <div class="square info-square square-about square-with-padding">
           <h1 class="title">Hello, I'm Juan, a web developer with 3 years of experience</h1>
           <p class="about-text">I like to make minimalist websites, focusing on functionality and performance, keeping the
             essence of each application</p>
@@ -23,7 +23,7 @@
       <!-- Projects -->
       <section id="projects-section" class="section">
         <!-- Finances -->
-        <div class="square project-square square-finances project-vertical">
+        <div class="square project-square square-finances project-vertical square-with-padding">
           <div class="title-and-link">
             <h2 class="project-title">Finances</h2>
             <a href="https://juanvera.dev/finances" target="_blank">
@@ -34,7 +34,7 @@
           <img src="assets/projects/finances.png" class="project-image" />
         </div>
         <!-- Encarga -->
-        <div class="square project-square square-encarga project-vertical">
+        <div class="square project-square square-encarga project-vertical square-with-padding">
           <div class="title-and-link">
             <h2 class="project-title">Encarga</h2>
             <a href="https://encargarpedido.web.app/" target="_blank">
@@ -59,6 +59,8 @@
 .container {
   max-width: 1200px;
   margin: auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .header {
@@ -78,16 +80,11 @@
 }
 
 .square {
-  min-width: 300px;
   border-radius: 24px;
 }
 
-.info-square {
-  padding: 40px;
-}
-
-.project-square {
-  padding: 30px;
+.square-with-padding {
+  padding: 20px;
 }
 
 .project-vertical {
@@ -121,11 +118,14 @@
 
 .project-image {
   margin: auto;
-  height: 400px;
+  max-width: 100%;
+  max-height: 400px;
 }
 
 .profile-img {
   border-radius: 24px;
+  max-height: 400px;
+  object-fit: cover;
 }
 
 .title-and-link {
@@ -168,12 +168,17 @@
 }
 
 @media (max-width: 767px) {
-  #main-info-section {
+  .section {
     flex-direction: column !important;
+    gap: 0;
+  }
+
+  .square {
+    margin: 10px;
   }
 
   .profile-img {
-    width: calc(100% - 20px);
+    width: 100%;
   }
 }
 
