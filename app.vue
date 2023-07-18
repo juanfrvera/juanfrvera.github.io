@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+
+    <Head>
+      <Title>Juan Vera - Full Stack Web Developer</Title>
+    </Head>
     <div class="header"></div>
     <main class="main">
       <!-- Main Info -->
