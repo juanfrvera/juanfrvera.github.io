@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-
     <Head>
       <Title>Juan Vera - Full Stack Web Developer</Title>
     </Head>
@@ -10,7 +9,7 @@
       <section id="main-info-section" class="section">
         <!-- Profile -->
         <div class="square">
-          <img class="profile-img" src="assets/mountains-cut.jpeg" />
+          <img class="profile-img" src="~assets/mountains-cut.jpeg" />
         </div>
         <!-- About -->
         <div class="square info-square square-about square-with-padding">
@@ -19,7 +18,7 @@
             essence of each application</p>
           <div class="contact">
             <a href="https://www.linkedin.com/in/juan-vera/" target="_blank">
-              <img src="assets/icons/linkedin.svg" class="link-linkedin" />
+              <img src="~assets/icons/linkedin.svg" class="link-linkedin" />
             </a>
           </div>
         </div>
@@ -31,18 +30,18 @@
           <div class="title-and-link">
             <h2 class="project-title">Finances</h2>
             <a href="https://juanvera.dev/finances" target="_blank">
-              <img src="assets/icons/arrow-up-right-from-square-solid.svg" class="project-link" />
+              <img src="~assets/icons/arrow-up-right-from-square-solid.svg" class="project-link" />
             </a>
           </div>
           <p class="project-subtitle">Manage your accounts, set reminders for debts and services</p>
-          <img src="assets/projects/finances.png" class="project-image" />
+          <img src="~assets/projects/finances.png" class="project-image" />
         </div>
         <!-- Encarga -->
         <div class="square project-square square-encarga project-vertical square-with-padding">
           <div class="title-and-link">
             <h2 class="project-title">Encarga</h2>
             <a href="https://encargarpedido.web.app/" target="_blank">
-              <img src="assets/icons/arrow-up-right-from-square-solid.svg" class="project-link" />
+              <img src="~assets/icons/arrow-up-right-from-square-solid.svg" class="project-link" />
             </a>
           </div>
           <div class="info-and-photo-horizontal">
@@ -51,7 +50,7 @@
               <li>Let your clients order</li>
               <li>Receive automatic messages</li>
             </ul>
-            <img src="assets/projects/encarga.webp" class="project-image" />
+            <img src="~assets/projects/encarga.webp" class="project-image" />
           </div>
         </div>
       </section>
