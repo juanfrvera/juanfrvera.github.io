@@ -14,7 +14,7 @@
         </div>
         <!-- About -->
         <div class="square info-square square-about square-with-padding">
-          <h1 class="title">Hello, I'm Juan, a web developer with 3 years of experience</h1>
+          <h1 class="title">Hello, I'm Juan, a Full Stack Engineer with {{ yearsOfExperience }} years of experience</h1>
           <p class="about-text">I like to make minimalist websites, focusing on functionality and performance, keeping the
             essence of each application</p>
           <div class="contact">
@@ -58,6 +58,16 @@
     </main>
   </div>
 </template>
+
+<script setup>
+   const yearsOfExperience = computed(() => {
+      // Calculate years that have passed since January of 2020
+      const now = new Date();
+      const start = new Date(2020, 0, 1);
+      const diff = now.getTime() - start.getTime();
+      return Math.round(diff / (1000 * 60 * 60 * 24 * 365));
+   });
+</script>
 
 <style>
 .container {
