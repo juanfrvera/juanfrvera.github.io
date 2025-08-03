@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [activeProject, setActiveProject] = useState("finances");
+  const [activeProject, setActiveProject] = useState("orilla-arquitectura");
   const [isGameSection, setIsGameSection] = useState(false);
 
   // Calculate years that have passed since January of 2020
@@ -21,7 +21,7 @@ export default function Home() {
   // Handle scroll to update active project and game section state
   useEffect(() => {
     const handleScroll = () => {
-      const projectSections = ['finances', 'encarga', 'finances-next', 'mini-order', 'aws-lambda-proxy', 'hard-roots', 'karts', 'rpg', 'tenis', 'nightmare-2d'];
+      const projectSections = ['orilla-arquitectura', 'finances', 'encarga', 'finances-next', 'mini-order', 'aws-lambda-proxy', 'hard-roots', 'karts', 'rpg', 'tenis', 'nightmare-2d'];
 
       // Check if we're in the game section
       const gameSection = document.getElementById('games-section');
@@ -56,8 +56,8 @@ export default function Home() {
 
   return (
     <div className={`min-h-screen text-gray-900 transition-all duration-1000 ease-in-out ${isGameSection
-        ? 'bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900'
-        : 'bg-white'
+      ? 'bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900'
+      : 'bg-white'
       }`}>
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
@@ -73,7 +73,7 @@ export default function Home() {
             />
             <div className="text-center md:text-left flex-1">
               <h1 className="text-4xl md:text-6xl font-light mb-8 leading-tight">
-                Hello, I&apos;m Juan, a{" "}
+                Hello, I&apos;m Juan Vera, a{" "}
                 <span className="font-medium">Full Stack Engineer</span>{" "}
                 with {yearsOfExperience} years of experience
               </h1>
@@ -123,7 +123,32 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-medium mb-12 text-center">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
+
+            {/* Orilla Arquitectura Project */}
+            <div className="group bg-white rounded-lg shadow-sm overflow-hidden">
+              <h3 className="text-2xl font-medium mb-4 p-6 pb-0">Orilla Arquitectura</h3>
+              <Link
+                href="https://orillaarquitectura.com.ar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="mb-4 px-6">
+                  <Image
+                    src="/orilla.jpg"
+                    alt="Orilla Arquitectura website screenshot"
+                    width={600}
+                    height={400}
+                    className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
+                  />
+                </div>
+                <div className="px-6 pb-6">
+                  <p className="text-gray-600 mb-2">Next.js and Google Cloud Platform</p>
+                  <p className="text-gray-600">Professional architecture firm website with admin-managed content</p>
+                </div>
+              </Link>
+            </div>
 
             {/* Finances Project */}
             <div className="group bg-white rounded-lg shadow-sm overflow-hidden">
@@ -208,7 +233,7 @@ export default function Home() {
 
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-medium mb-4 text-gray-900">Testing</h3>
-              <p className="text-gray-600">Unit tests with Mocha, Chai, Sinon</p>
+              <p className="text-gray-600">End-to-end testing, Unit testing, Integration testing with Mocha, Chai, Sinon</p>
             </div>
 
             <div className="bg-gray-50 p-6 rounded-lg">
@@ -288,6 +313,60 @@ export default function Home() {
           <div className="flex gap-8">
             {/* Main Content */}
             <div className="flex-1">
+
+              {/* Orilla Arquitectura Detailed */}
+              <div id="orilla-arquitectura" className="mb-16 bg-white rounded-lg shadow-sm overflow-hidden">
+                <div className="p-8">
+                  <h3 className="text-3xl font-medium mb-4">Orilla Arquitectura</h3>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Next.js</span>
+                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">React</span>
+                    <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Google Cloud</span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">TypeScript</span>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <Image
+                        src="/orilla.jpg"
+                        alt="Orilla Arquitectura website screenshot"
+                        width={600}
+                        height={400}
+                        className="w-full h-64 object-cover rounded-lg mb-4"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-gray-600 mb-4">
+                        Professional architecture firm website built with Next.js and deployed on Google Cloud Platform. 
+                        Features a dynamic content management system allowing admin users to update project information, 
+                        portfolios, and company details through a secure admin interface.
+                      </p>
+                      <h4 className="font-medium mb-2">Key Features:</h4>
+                      <ul className="text-gray-600 space-y-1 mb-4">
+                        <li>• Database-driven content management</li>
+                        <li>• Admin panel for content updates</li>
+                        <li>• Responsive design for all devices</li>
+                        <li>• SEO-optimized architecture portfolio</li>
+                        <li>• Automated deployment with GitHub Actions</li>
+                        <li>• Professional project showcase</li>
+                      </ul>
+                      <div className="flex gap-4">
+                        <Link
+                          href="https://orillaarquitectura.com.ar"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                        >
+                          <span className="mr-2">Visit Website</span>
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               {/* Finances Detailed */}
               <div id="finances" className="mb-16 bg-white rounded-lg shadow-sm overflow-hidden">
@@ -499,6 +578,47 @@ export default function Home() {
                       <span className="mr-2">View Code</span>
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Orilla Arquitectura Detailed */}
+              <div id="orilla-arquitectura" className="mb-16 bg-white rounded-lg shadow-sm overflow-hidden">
+                <div className="p-8">
+                  <h3 className="text-3xl font-medium mb-4">Orilla Arquitectura</h3>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <span className="px-3 py-1 bg-black text-white rounded-full text-sm">Next.js</span>
+                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">React</span>
+                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">GCP</span>
+                    <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Database</span>
+                  </div>
+                  
+                  <p className="text-gray-600 mb-4">
+                    Modern architecture firm website built with Next.js and React, deployed on Google Cloud Platform. 
+                    Features a content management system allowing admin users to dynamically update project showcases, 
+                    company information, and portfolio content without code changes.
+                  </p>
+                  <h4 className="font-medium mb-2">Key Features:</h4>
+                  <ul className="text-gray-600 space-y-1 mb-4">
+                    <li>• Dynamic content management system</li>
+                    <li>• Admin dashboard for content updates</li>
+                    <li>• Responsive design for all devices</li>
+                    <li>• Automated deployment with GitHub Actions</li>
+                    <li>• Database-driven project portfolio</li>
+                    <li>• SEO optimized with Next.js</li>
+                  </ul>
+                  <div className="flex gap-4">
+                    <Link 
+                      href="https://orillaarquitectura.com.ar"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      <span className="mr-2">Live Website</span>
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
                       </svg>
                     </Link>
                   </div>
@@ -739,6 +859,7 @@ export default function Home() {
                   }`}>Projects</h4>
                 <nav className="space-y-3">
                   {[
+                    { id: 'orilla-arquitectura', name: 'Orilla Arquitectura', color: 'bg-indigo-500', category: 'web' },
                     { id: 'finances', name: 'Finances', color: 'bg-blue-500', category: 'web' },
                     { id: 'encarga', name: 'Encarga', color: 'bg-red-500', category: 'web' },
                     { id: 'finances-next', name: 'Finances-Next', color: 'bg-black', category: 'web' },
@@ -760,8 +881,8 @@ export default function Home() {
                       <button
                         onClick={() => scrollToProject(project.id)}
                         className={`flex items-center w-full text-left p-3 rounded-lg transition-all ${activeProject === project.id
-                            ? (isGameSection ? 'bg-purple-800/50 shadow-sm' : 'bg-gray-100 shadow-sm')
-                            : (isGameSection ? 'hover:bg-gray-700/50' : 'hover:bg-gray-50')
+                          ? (isGameSection ? 'bg-purple-800/50 shadow-sm' : 'bg-gray-100 shadow-sm')
+                          : (isGameSection ? 'hover:bg-gray-700/50' : 'hover:bg-gray-50')
                           }`}
                       >
                         <div
@@ -769,8 +890,8 @@ export default function Home() {
                             }`}
                         />
                         <span className={`transition-colors duration-1000 ${activeProject === project.id
-                            ? (isGameSection ? 'font-medium text-white' : 'font-medium text-gray-900')
-                            : (isGameSection ? 'text-purple-200' : 'text-gray-600')
+                          ? (isGameSection ? 'font-medium text-white' : 'font-medium text-gray-900')
+                          : (isGameSection ? 'text-purple-200' : 'text-gray-600')
                           }`}>
                           {project.name}
                         </span>
