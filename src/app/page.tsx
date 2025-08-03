@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [activeProject, setActiveProject] = useState("finances");
+  const [isGameSection, setIsGameSection] = useState(false);
 
   // Calculate years that have passed since January of 2020
   const calculateYearsOfExperience = () => {
@@ -17,10 +18,18 @@ export default function Home() {
 
   const yearsOfExperience = calculateYearsOfExperience();
 
-  // Handle scroll to update active project
+  // Handle scroll to update active project and game section state
   useEffect(() => {
     const handleScroll = () => {
-      const projectSections = ['finances', 'encarga', 'finances-next', 'mini-order', 'aws-lambda-proxy'];
+      const projectSections = ['finances', 'encarga', 'finances-next', 'mini-order', 'aws-lambda-proxy', 'hard-roots', 'karts', 'rpg', 'tenis', 'nightmare-2d'];
+      
+      // Check if we're in the game section
+      const gameSection = document.getElementById('games-section');
+      if (gameSection) {
+        const rect = gameSection.getBoundingClientRect();
+        const isInGameSection = rect.top <= window.innerHeight / 3 && rect.bottom >= window.innerHeight / 3;
+        setIsGameSection(isInGameSection);
+      }
       
       for (const projectId of projectSections) {
         const element = document.getElementById(projectId);
@@ -46,7 +55,11 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className={`min-h-screen text-gray-900 transition-all duration-1000 ease-in-out ${
+      isGameSection 
+        ? 'bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900' 
+        : 'bg-white'
+    }`}>
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-6xl mx-auto">
@@ -493,40 +506,310 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Game Projects Section */}
+              <div id="games-section" className="mb-16">
+                <div className="text-center mb-12">
+                  <h3 className={`text-4xl font-bold mb-4 transition-colors duration-1000 ${
+                    isGameSection ? 'text-white' : 'text-gray-900'
+                  }`}>
+                    Game Development
+                  </h3>
+                  <p className={`text-lg transition-colors duration-1000 ${
+                    isGameSection ? 'text-purple-200' : 'text-gray-600'
+                  }`}>
+                    Indie games developed with Unlucky Dwarf team
+                  </p>
+                </div>
+
+                {/* Hard Roots */}
+                <div id="hard-roots" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${
+                  isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
+                }`}>
+                  <div className="p-8">
+                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-white' : 'text-gray-900'
+                    }`}>Hard Roots</h3>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Unity</span>
+                      <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">C#</span>
+                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Indie Game</span>
+                    </div>
+                    
+                    <p className={`mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-purple-200' : 'text-gray-600'
+                    }`}>
+                      An adventure game exploring deep underground roots and nature's mysteries. 
+                      Navigate through challenging environments while uncovering the secrets beneath the earth.
+                    </p>
+                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${
+                      isGameSection ? 'text-white' : 'text-gray-900'
+                    }`}>Key Features:</h4>
+                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-purple-200' : 'text-gray-600'
+                    }`}>
+                      <li>• Exploration-based gameplay</li>
+                      <li>• Environmental storytelling</li>
+                      <li>• Unique underground setting</li>
+                      <li>• Puzzle-solving mechanics</li>
+                    </ul>
+                    <div className="flex gap-4">
+                      <Link 
+                        href="https://unlucky-dwarf.web.app/games/hardRoots.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                      >
+                        <span className="mr-2">View Game</span>
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Karts */}
+                <div id="karts" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${
+                  isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
+                }`}>
+                  <div className="p-8">
+                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-white' : 'text-gray-900'
+                    }`}>Karts</h3>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Unity</span>
+                      <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">C#</span>
+                      <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">Racing</span>
+                    </div>
+                    
+                    <p className={`mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-purple-200' : 'text-gray-600'
+                    }`}>
+                      High-speed kart racing game with dynamic tracks and competitive gameplay. 
+                      Experience thrilling races with customizable karts and challenging opponents.
+                    </p>
+                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${
+                      isGameSection ? 'text-white' : 'text-gray-900'
+                    }`}>Key Features:</h4>
+                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-purple-200' : 'text-gray-600'
+                    }`}>
+                      <li>• Fast-paced racing mechanics</li>
+                      <li>• Multiple track layouts</li>
+                      <li>• Kart customization</li>
+                      <li>• Competitive AI opponents</li>
+                    </ul>
+                    <div className="flex gap-4">
+                      <Link 
+                        href="https://unlucky-dwarf.web.app/games/karts.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      >
+                        <span className="mr-2">View Game</span>
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* RPG */}
+                <div id="rpg" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${
+                  isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
+                }`}>
+                  <div className="p-8">
+                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-white' : 'text-gray-900'
+                    }`}>RPG</h3>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Unity</span>
+                      <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">C#</span>
+                      <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Role Playing</span>
+                    </div>
+                    
+                    <p className={`mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-purple-200' : 'text-gray-600'
+                    }`}>
+                      Classic role-playing game with character progression, quests, and immersive storytelling. 
+                      Build your character, explore vast worlds, and engage in strategic combat.
+                    </p>
+                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${
+                      isGameSection ? 'text-white' : 'text-gray-900'
+                    }`}>Key Features:</h4>
+                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-purple-200' : 'text-gray-600'
+                    }`}>
+                      <li>• Character progression system</li>
+                      <li>• Quest-driven narrative</li>
+                      <li>• Strategic turn-based combat</li>
+                      <li>• Expansive world exploration</li>
+                    </ul>
+                    <div className="flex gap-4">
+                      <Link 
+                        href="https://unlucky-dwarf.web.app/games/rpg.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                      >
+                        <span className="mr-2">View Game</span>
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tenis */}
+                <div id="tenis" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${
+                  isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
+                }`}>
+                  <div className="p-8">
+                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-white' : 'text-gray-900'
+                    }`}>Tenis</h3>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Unity</span>
+                      <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">C#</span>
+                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Sports</span>
+                    </div>
+                    
+                    <p className={`mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-purple-200' : 'text-gray-600'
+                    }`}>
+                      Realistic tennis simulation with accurate physics and competitive gameplay. 
+                      Master your serves, volleys, and court positioning in this engaging sports game.
+                    </p>
+                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${
+                      isGameSection ? 'text-white' : 'text-gray-900'
+                    }`}>Key Features:</h4>
+                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-purple-200' : 'text-gray-600'
+                    }`}>
+                      <li>• Realistic tennis physics</li>
+                      <li>• Multiple court surfaces</li>
+                      <li>• Tournament progression</li>
+                      <li>• Skill-based gameplay</li>
+                    </ul>
+                    <div className="flex gap-4">
+                      <Link 
+                        href="https://unlucky-dwarf.web.app/games/tenis.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                      >
+                        <span className="mr-2">View Game</span>
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Nightmare 2.5D */}
+                <div id="nightmare-2d" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${
+                  isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
+                }`}>
+                  <div className="p-8">
+                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-white' : 'text-gray-900'
+                    }`}>Nightmare 2.5D</h3>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">Unity</span>
+                      <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">C#</span>
+                      <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Horror</span>
+                    </div>
+                    
+                    <p className={`mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-purple-200' : 'text-gray-600'
+                    }`}>
+                      Atmospheric horror game with 2.5D perspective delivering psychological thrills. 
+                      Navigate through haunting environments while uncovering the mysteries of your nightmares.
+                    </p>
+                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${
+                      isGameSection ? 'text-white' : 'text-gray-900'
+                    }`}>Key Features:</h4>
+                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${
+                      isGameSection ? 'text-purple-200' : 'text-gray-600'
+                    }`}>
+                      <li>• Atmospheric 2.5D graphics</li>
+                      <li>• Psychological horror elements</li>
+                      <li>• Immersive sound design</li>
+                      <li>• Mystery-driven narrative</li>
+                    </ul>
+                    <div className="flex gap-4">
+                      <Link 
+                        href="https://unlucky-dwarf.web.app/games/nightmare.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                      >
+                        <span className="mr-2">View Game</span>
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             {/* Navigation Sidebar */}
             <div className="hidden lg:block w-64 sticky top-8 self-start">
-              <div className="bg-white rounded-lg shadow-sm p-6">
-                <h4 className="font-medium mb-4 text-gray-900">Projects</h4>
+              <div className={`rounded-lg shadow-sm p-6 transition-colors duration-1000 ${
+                isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
+              }`}>
+                <h4 className={`font-medium mb-4 transition-colors duration-1000 ${
+                  isGameSection ? 'text-white' : 'text-gray-900'
+                }`}>Projects</h4>
                 <nav className="space-y-3">
                   {[
-                    { id: 'finances', name: 'Finances', color: 'bg-blue-500' },
-                    { id: 'encarga', name: 'Encarga', color: 'bg-red-500' },
-                    { id: 'finances-next', name: 'Finances-Next', color: 'bg-black' },
-                    { id: 'mini-order', name: 'Mini-order', color: 'bg-green-500' },
-                    { id: 'aws-lambda-proxy', name: 'AWS Lambda Proxy', color: 'bg-orange-500' }
+                    { id: 'finances', name: 'Finances', color: 'bg-blue-500', category: 'web' },
+                    { id: 'encarga', name: 'Encarga', color: 'bg-red-500', category: 'web' },
+                    { id: 'finances-next', name: 'Finances-Next', color: 'bg-black', category: 'web' },
+                    { id: 'mini-order', name: 'Mini-order', color: 'bg-green-500', category: 'web' },
+                    { id: 'aws-lambda-proxy', name: 'AWS Lambda Proxy', color: 'bg-orange-500', category: 'web' },
+                    { id: 'hard-roots', name: 'Hard Roots', color: 'bg-green-600', category: 'game' },
+                    { id: 'karts', name: 'Karts', color: 'bg-blue-600', category: 'game' },
+                    { id: 'rpg', name: 'RPG', color: 'bg-indigo-600', category: 'game' },
+                    { id: 'tenis', name: 'Tenis', color: 'bg-green-600', category: 'game' },
+                    { id: 'nightmare-2d', name: 'Nightmare 2.5D', color: 'bg-red-600', category: 'game' }
                   ].map((project) => (
-                    <button
-                      key={project.id}
-                      onClick={() => scrollToProject(project.id)}
-                      className={`flex items-center w-full text-left p-3 rounded-lg transition-all ${
-                        activeProject === project.id 
-                          ? 'bg-gray-100 shadow-sm' 
-                          : 'hover:bg-gray-50'
-                      }`}
-                    >
-                      <div 
-                        className={`w-3 h-3 rounded-full mr-3 ${project.color} ${
-                          activeProject === project.id ? 'ring-2 ring-offset-2 ring-gray-300' : ''
+                    <div key={project.id}>
+                      {project.id === 'hard-roots' && (
+                        <div className={`text-xs font-medium mb-2 mt-4 transition-colors duration-1000 ${
+                          isGameSection ? 'text-purple-300' : 'text-gray-500'
+                        }`}>
+                          GAMES
+                        </div>
+                      )}
+                      <button
+                        onClick={() => scrollToProject(project.id)}
+                        className={`flex items-center w-full text-left p-3 rounded-lg transition-all ${
+                          activeProject === project.id 
+                            ? (isGameSection ? 'bg-purple-800/50 shadow-sm' : 'bg-gray-100 shadow-sm')
+                            : (isGameSection ? 'hover:bg-gray-700/50' : 'hover:bg-gray-50')
                         }`}
-                      />
-                      <span className={`${
-                        activeProject === project.id ? 'font-medium text-gray-900' : 'text-gray-600'
-                      }`}>
-                        {project.name}
-                      </span>
-                    </button>
+                      >
+                        <div 
+                          className={`w-3 h-3 rounded-full mr-3 ${project.color} ${
+                            activeProject === project.id ? 'ring-2 ring-offset-2 ring-gray-300' : ''
+                          }`}
+                        />
+                        <span className={`transition-colors duration-1000 ${
+                          activeProject === project.id 
+                            ? (isGameSection ? 'font-medium text-white' : 'font-medium text-gray-900')
+                            : (isGameSection ? 'text-purple-200' : 'text-gray-600')
+                        }`}>
+                          {project.name}
+                        </span>
+                      </button>
+                    </div>
                   ))}
                 </nav>
               </div>
