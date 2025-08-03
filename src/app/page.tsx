@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [activeProject, setActiveProject] = useState("orilla-arquitectura");
   const [isGameSection, setIsGameSection] = useState(false);
+  const [showTechnicalDetails, setShowTechnicalDetails] = useState(false);
 
   // Calculate years that have passed since January of 2020
   const calculateYearsOfExperience = () => {
@@ -475,24 +476,29 @@ export default function Home() {
                 <div className="p-8">
                   <h3 className="text-3xl font-medium mb-4">Finances-Next</h3>
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="px-3 py-1 bg-black text-white rounded-full text-sm">Next.js</span>
-                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">React</span>
+                    <span className="px-3 py-1 bg-black text-white rounded-full text-sm">Next.js 14</span>
+                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">React 18</span>
                     <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">TypeScript</span>
+                    <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">MongoDB</span>
+                    <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">AWS Lambda</span>
                   </div>
 
                   <p className="text-gray-600 mb-4">
-                    Enhanced version of the Finances app rebuilt with Next.js for improved performance,
-                    SEO, and modern React features. Includes server-side rendering and static generation.
+                    A comprehensive financial management application built with Next.js, featuring debt tracking, 
+                    payment management, multi-currency support, and automatic AWS deployment with full authentication system.
                   </p>
-                  <h4 className="font-medium mb-2">Improvements:</h4>
+
+                  <h4 className="font-medium mb-2">Key Features:</h4>
                   <ul className="text-gray-600 space-y-1 mb-4">
-                    <li>• Better performance with Next.js optimization</li>
-                    <li>• Server-side rendering for SEO</li>
-                    <li>• Modern React hooks and patterns</li>
-                    <li>• Improved TypeScript integration</li>
-                    <li>• Enhanced build and deployment pipeline</li>
+                    <li>• Multi-Currency Account Management</li>
+                    <li>• Advanced Debt Tracking with Payment Status</li>
+                    <li>• JWT Authentication with HTTP-Only Cookies</li>
+                    <li>• Interactive Charts and Data Visualization</li>
+                    <li>• Dark/Light Mode with System Preference Detection</li>
+                    <li>• Serverless Deployment on AWS Lambda</li>
                   </ul>
-                  <div className="flex gap-4">
+
+                  <div className="flex flex-wrap gap-4 mb-6">
                     <Link
                       href="https://github.com/juanfrvera/finances-next"
                       target="_blank"
@@ -504,7 +510,109 @@ export default function Home() {
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                       </svg>
                     </Link>
+                    
+                    <button
+                      onClick={() => setShowTechnicalDetails(!showTechnicalDetails)}
+                      className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      <span className="mr-2">
+                        {showTechnicalDetails ? 'Hide' : 'Show'} Technical Details
+                      </span>
+                      <svg 
+                        className={`w-4 h-4 transition-transform ${showTechnicalDetails ? 'rotate-180' : ''}`} 
+                        fill="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M7 10l5 5 5-5z"/>
+                      </svg>
+                    </button>
                   </div>
+
+                  {/* Technical Details - Expandable Section */}
+                  {showTechnicalDetails && (
+                    <div className="mt-6 p-6 bg-gray-50 rounded-lg border-l-4 border-blue-500">
+                      <h4 className="text-xl font-semibold mb-4 text-gray-900">Technical Architecture & Implementation</h4>
+                      
+                      {/* Core Technologies */}
+                      <div className="mb-6">
+                        <h5 className="font-medium mb-3 text-gray-800">🛠️ Core Technologies</h5>
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <div>
+                            <h6 className="font-medium text-sm text-gray-700 mb-2">Frontend</h6>
+                            <ul className="text-sm text-gray-600 space-y-1">
+                              <li>• Next.js 14 with App Router</li>
+                              <li>• React 18 with Concurrent Features</li>
+                              <li>• TypeScript for Type Safety</li>
+                              <li>• Tailwind CSS + Shadcn/ui Components</li>
+                              <li>• Lucide React Icons</li>
+                            </ul>
+                          </div>
+                          <div>
+                            <h6 className="font-medium text-sm text-gray-700 mb-2">Backend & Database</h6>
+                            <ul className="text-sm text-gray-600 space-y-1">
+                              <li>• MongoDB with Flexible Schema</li>
+                              <li>• Next.js Server Actions</li>
+                              <li>• JWT Authentication</li>
+                              <li>• Bcrypt Password Hashing</li>
+                              <li>• HTTP-Only Cookie Security</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Advanced Features */}
+                      <div className="mb-6">
+                        <h5 className="font-medium mb-3 text-gray-800">✨ Advanced Features</h5>
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <div>
+                            <h6 className="font-medium text-sm text-gray-700 mb-2">Financial Management</h6>
+                            <ul className="text-sm text-gray-600 space-y-1">
+                              <li>• Multi-currency account tracking</li>
+                              <li>• Automatic payment status calculation</li>
+                              <li>• Debt grouping by person/direction</li>
+                              <li>• Transaction history with notes</li>
+                              <li>• Service subscription monitoring</li>
+                            </ul>
+                          </div>
+                          <div>
+                            <h6 className="font-medium text-sm text-gray-700 mb-2">User Experience</h6>
+                            <ul className="text-sm text-gray-600 space-y-1">
+                              <li>• Dark/Light mode with system detection</li>
+                              <li>• Drag & drop custom ordering</li>
+                              <li>• Archive/unarchive system</li>
+                              <li>• Interactive charts & visualization</li>
+                              <li>• Responsive mobile-first design</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Architecture */}
+                      <div className="mb-6">
+                        <h5 className="font-medium mb-3 text-gray-800">🏗️ System Architecture</h5>
+                        <div className="bg-white p-4 rounded border">
+                          <div className="text-sm text-gray-600 space-y-2">
+                            <p><strong>Authentication Flow:</strong> JWT tokens → HTTP-only cookies → Server middleware validation</p>
+                            <p><strong>Data Flow:</strong> React Client → Next.js Server Actions → MongoDB → Real-time UI updates</p>
+                            <p><strong>Security:</strong> Protected routes, session management, automatic token refresh</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Deployment */}
+                      <div className="mb-4">
+                        <h5 className="font-medium mb-3 text-gray-800">🚀 AWS Serverless Deployment</h5>
+                        <div className="bg-white p-4 rounded border">
+                          <div className="text-sm text-gray-600 space-y-2">
+                            <p><strong>CI/CD Pipeline:</strong> GitHub Actions → AWS CloudFormation → Lambda + API Gateway</p>
+                            <p><strong>Infrastructure:</strong> AWS Lambda (serverless) + CloudFront CDN + API Gateway</p>
+                            <p><strong>Cost Efficiency:</strong> Pay-per-use model (~$5-15/month) with automatic scaling</p>
+                            <p><strong>Performance:</strong> Global CDN distribution with zero server maintenance</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 
