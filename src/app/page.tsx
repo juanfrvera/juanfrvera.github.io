@@ -22,7 +22,7 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       const projectSections = ['finances', 'encarga', 'finances-next', 'mini-order', 'aws-lambda-proxy', 'hard-roots', 'karts', 'rpg', 'tenis', 'nightmare-2d'];
-      
+
       // Check if we're in the game section
       const gameSection = document.getElementById('games-section');
       if (gameSection) {
@@ -30,7 +30,7 @@ export default function Home() {
         const isInGameSection = rect.top <= window.innerHeight / 3 && rect.bottom >= window.innerHeight / 3;
         setIsGameSection(isInGameSection);
       }
-      
+
       for (const projectId of projectSections) {
         const element = document.getElementById(projectId);
         if (element) {
@@ -55,11 +55,10 @@ export default function Home() {
   };
 
   return (
-    <div className={`min-h-screen text-gray-900 transition-all duration-1000 ease-in-out ${
-      isGameSection 
-        ? 'bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900' 
+    <div className={`min-h-screen text-gray-900 transition-all duration-1000 ease-in-out ${isGameSection
+        ? 'bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900'
         : 'bg-white'
-    }`}>
+      }`}>
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-6xl mx-auto">
@@ -80,40 +79,40 @@ export default function Home() {
               </h1>
             </div>
           </div>
-          
+
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl md:max-w-none">
             Senior Full Stack Developer specializing in contact center automation and web applications.
             I create minimalist websites focusing on functionality and performance,
             keeping the essence of each application.
           </p>
-          
+
           <div className="flex justify-center mb-16">
-            <Link 
+            <Link
               href="https://www.linkedin.com/in/juan-vera/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-700 transition-colors mr-6"
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
             </Link>
-            <Link 
+            <Link
               href="https://github.com/juanfrvera"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-700 transition-colors mr-6"
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
             </Link>
-            <Link 
+            <Link
               href="mailto:juanfrvera.work@gmail.com"
               className="text-blue-600 hover:text-blue-700 transition-colors"
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h3.819l6.545 4.91 6.545-4.91h3.819A1.636 1.636 0 0 1 24 5.457z"/>
+                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h3.819l6.545 4.91 6.545-4.91h3.819A1.636 1.636 0 0 1 24 5.457z" />
               </svg>
             </Link>
           </div>
@@ -125,11 +124,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-medium mb-12 text-center">Featured Projects</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            
+
             {/* Finances Project */}
             <div className="group bg-white rounded-lg shadow-sm overflow-hidden">
               <h3 className="text-2xl font-medium mb-4 p-6 pb-0">Finances</h3>
-              <Link 
+              <Link
                 href="https://juanvera.dev/finances"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -154,7 +153,7 @@ export default function Home() {
             {/* Encarga Project */}
             <div className="group bg-white rounded-lg shadow-sm overflow-hidden">
               <h3 className="text-2xl font-medium mb-4 p-6 pb-0">Encarga</h3>
-              <Link 
+              <Link
                 href="https://encargarpedido.web.app/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -176,7 +175,7 @@ export default function Home() {
                 </div>
               </Link>
             </div>
-            
+
           </div>
         </div>
       </section>
@@ -186,7 +185,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-medium mb-12 text-center">Technical Skills</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
+
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-medium mb-4 text-gray-900">Frontend</h3>
               <p className="text-gray-600">Angular, Vue, React, Next.js, Ionic, JavaScript, TypeScript, Tailwind, Sass</p>
@@ -225,7 +224,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-medium mb-12 text-center">Professional Experience</h2>
           <div className="space-y-8">
-            
+
             {/* Intelepeer */}
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
@@ -285,11 +284,11 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-medium mb-12 text-center">All Projects</h2>
-          
+
           <div className="flex gap-8">
             {/* Main Content */}
             <div className="flex-1">
-              
+
               {/* Finances Detailed */}
               <div id="finances" className="mb-16 bg-white rounded-lg shadow-sm overflow-hidden">
                 <div className="p-8">
@@ -299,7 +298,7 @@ export default function Home() {
                     <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">GitHub Pages</span>
                     <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">TypeScript</span>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <Image
@@ -312,7 +311,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-gray-600 mb-4">
-                        A comprehensive personal finance management application built with SvelteKit. 
+                        A comprehensive personal finance management application built with SvelteKit.
                         Features account management, debt tracking, service reminders, and financial analytics.
                       </p>
                       <h4 className="font-medium mb-2">Key Features:</h4>
@@ -324,7 +323,7 @@ export default function Home() {
                         <li>• Data export and import</li>
                       </ul>
                       <div className="flex gap-4">
-                        <Link 
+                        <Link
                           href="https://juanvera.dev/finances"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -332,7 +331,7 @@ export default function Home() {
                         >
                           <span className="mr-2">Live Demo</span>
                           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                            <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
                           </svg>
                         </Link>
                       </div>
@@ -350,7 +349,7 @@ export default function Home() {
                     <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Node.js</span>
                     <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Firebase</span>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <Image
@@ -363,7 +362,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-gray-600 mb-4">
-                        A complete e-commerce solution for small businesses. Allows shop owners to create their 
+                        A complete e-commerce solution for small businesses. Allows shop owners to create their
                         online presence, manage inventory, and receive orders with automatic notifications.
                       </p>
                       <h4 className="font-medium mb-2">Key Features:</h4>
@@ -375,7 +374,7 @@ export default function Home() {
                         <li>• Order tracking and management</li>
                       </ul>
                       <div className="flex gap-4">
-                        <Link 
+                        <Link
                           href="https://encargarpedido.web.app/"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -383,7 +382,7 @@ export default function Home() {
                         >
                           <span className="mr-2">Live Demo</span>
                           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                            <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
                           </svg>
                         </Link>
                       </div>
@@ -401,9 +400,9 @@ export default function Home() {
                     <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">React</span>
                     <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">TypeScript</span>
                   </div>
-                  
+
                   <p className="text-gray-600 mb-4">
-                    Enhanced version of the Finances app rebuilt with Next.js for improved performance, 
+                    Enhanced version of the Finances app rebuilt with Next.js for improved performance,
                     SEO, and modern React features. Includes server-side rendering and static generation.
                   </p>
                   <h4 className="font-medium mb-2">Improvements:</h4>
@@ -415,7 +414,7 @@ export default function Home() {
                     <li>• Enhanced build and deployment pipeline</li>
                   </ul>
                   <div className="flex gap-4">
-                    <Link 
+                    <Link
                       href="https://github.com/juanfrvera/finances-next"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -423,7 +422,7 @@ export default function Home() {
                     >
                       <span className="mr-2">View Code</span>
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                       </svg>
                     </Link>
                   </div>
@@ -439,9 +438,9 @@ export default function Home() {
                     <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Node.js</span>
                     <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Express</span>
                   </div>
-                  
+
                   <p className="text-gray-600 mb-4">
-                    A lightweight ordering system designed for small businesses and restaurants. 
+                    A lightweight ordering system designed for small businesses and restaurants.
                     Simple setup with minimal configuration required to get started.
                   </p>
                   <h4 className="font-medium mb-2">Features:</h4>
@@ -453,7 +452,7 @@ export default function Home() {
                     <li>• Basic analytics and reporting</li>
                   </ul>
                   <div className="flex gap-4">
-                    <Link 
+                    <Link
                       href="https://github.com/juanfrvera/mini-order"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -461,7 +460,7 @@ export default function Home() {
                     >
                       <span className="mr-2">View Code</span>
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                       </svg>
                     </Link>
                   </div>
@@ -477,9 +476,9 @@ export default function Home() {
                     <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Node.js</span>
                     <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">TypeScript</span>
                   </div>
-                  
+
                   <p className="text-gray-600 mb-4">
-                    A serverless proxy solution using AWS Lambda for handling API requests, 
+                    A serverless proxy solution using AWS Lambda for handling API requests,
                     CORS management, and request/response transformation.
                   </p>
                   <h4 className="font-medium mb-2">Features:</h4>
@@ -491,7 +490,7 @@ export default function Home() {
                     <li>• Easy deployment</li>
                   </ul>
                   <div className="flex gap-4">
-                    <Link 
+                    <Link
                       href="https://github.com/juanfrvera/aws-lambda-proxy"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -499,7 +498,7 @@ export default function Home() {
                     >
                       <span className="mr-2">View Code</span>
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                       </svg>
                     </Link>
                   </div>
@@ -509,51 +508,44 @@ export default function Home() {
               {/* Game Projects Section */}
               <div id="games-section" className="mb-16">
                 <div className="text-center mb-12">
-                  <h3 className={`text-4xl font-bold mb-4 transition-colors duration-1000 ${
-                    isGameSection ? 'text-white' : 'text-gray-900'
-                  }`}>
+                  <h3 className={`text-4xl font-bold mb-4 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
+                    }`}>
                     Game Development
                   </h3>
-                  <p className={`text-lg transition-colors duration-1000 ${
-                    isGameSection ? 'text-purple-200' : 'text-gray-600'
-                  }`}>
+                  <p className={`text-lg transition-colors duration-1000 ${isGameSection ? 'text-purple-200' : 'text-gray-600'
+                    }`}>
                     Indie games developed with Unlucky Dwarf team
                   </p>
                 </div>
 
                 {/* Hard Roots */}
-                <div id="hard-roots" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${
-                  isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
-                }`}>
+                <div id="hard-roots" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
+                  }`}>
                   <div className="p-8">
-                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-white' : 'text-gray-900'
-                    }`}>Hard Roots</h3>
+                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
+                      }`}>Hard Roots</h3>
                     <div className="flex flex-wrap gap-2 mb-6">
                       <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Unity</span>
                       <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">C#</span>
                       <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Indie Game</span>
                     </div>
-                    
-                    <p className={`mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-purple-200' : 'text-gray-600'
-                    }`}>
-                      An adventure game exploring deep underground roots and nature's mysteries. 
+
+                    <p className={`mb-4 transition-colors duration-1000 ${isGameSection ? 'text-purple-200' : 'text-gray-600'
+                      }`}>
+                      An adventure game exploring deep underground roots and nature&apos;s mysteries.
                       Navigate through challenging environments while uncovering the secrets beneath the earth.
                     </p>
-                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${
-                      isGameSection ? 'text-white' : 'text-gray-900'
-                    }`}>Key Features:</h4>
-                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-purple-200' : 'text-gray-600'
-                    }`}>
+                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
+                      }`}>Key Features:</h4>
+                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${isGameSection ? 'text-purple-200' : 'text-gray-600'
+                      }`}>
                       <li>• Exploration-based gameplay</li>
                       <li>• Environmental storytelling</li>
                       <li>• Unique underground setting</li>
                       <li>• Puzzle-solving mechanics</li>
                     </ul>
                     <div className="flex gap-4">
-                      <Link 
+                      <Link
                         href="https://unlucky-dwarf.web.app/games/hardRoots.html"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -561,7 +553,7 @@ export default function Home() {
                       >
                         <span className="mr-2">View Game</span>
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
                         </svg>
                       </Link>
                     </div>
@@ -569,38 +561,33 @@ export default function Home() {
                 </div>
 
                 {/* Karts */}
-                <div id="karts" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${
-                  isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
-                }`}>
+                <div id="karts" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
+                  }`}>
                   <div className="p-8">
-                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-white' : 'text-gray-900'
-                    }`}>Karts</h3>
+                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
+                      }`}>Karts</h3>
                     <div className="flex flex-wrap gap-2 mb-6">
                       <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Unity</span>
                       <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">C#</span>
                       <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">Racing</span>
                     </div>
-                    
-                    <p className={`mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-purple-200' : 'text-gray-600'
-                    }`}>
-                      High-speed kart racing game with dynamic tracks and competitive gameplay. 
+
+                    <p className={`mb-4 transition-colors duration-1000 ${isGameSection ? 'text-purple-200' : 'text-gray-600'
+                      }`}>
+                      High-speed kart racing game with dynamic tracks and competitive gameplay.
                       Experience thrilling races with customizable karts and challenging opponents.
                     </p>
-                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${
-                      isGameSection ? 'text-white' : 'text-gray-900'
-                    }`}>Key Features:</h4>
-                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-purple-200' : 'text-gray-600'
-                    }`}>
+                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
+                      }`}>Key Features:</h4>
+                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${isGameSection ? 'text-purple-200' : 'text-gray-600'
+                      }`}>
                       <li>• Fast-paced racing mechanics</li>
                       <li>• Multiple track layouts</li>
                       <li>• Kart customization</li>
                       <li>• Competitive AI opponents</li>
                     </ul>
                     <div className="flex gap-4">
-                      <Link 
+                      <Link
                         href="https://unlucky-dwarf.web.app/games/karts.html"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -608,7 +595,7 @@ export default function Home() {
                       >
                         <span className="mr-2">View Game</span>
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
                         </svg>
                       </Link>
                     </div>
@@ -616,38 +603,33 @@ export default function Home() {
                 </div>
 
                 {/* RPG */}
-                <div id="rpg" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${
-                  isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
-                }`}>
+                <div id="rpg" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
+                  }`}>
                   <div className="p-8">
-                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-white' : 'text-gray-900'
-                    }`}>RPG</h3>
+                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
+                      }`}>RPG</h3>
                     <div className="flex flex-wrap gap-2 mb-6">
                       <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Unity</span>
                       <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">C#</span>
                       <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Role Playing</span>
                     </div>
-                    
-                    <p className={`mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-purple-200' : 'text-gray-600'
-                    }`}>
-                      Classic role-playing game with character progression, quests, and immersive storytelling. 
+
+                    <p className={`mb-4 transition-colors duration-1000 ${isGameSection ? 'text-purple-200' : 'text-gray-600'
+                      }`}>
+                      Classic role-playing game with character progression, quests, and immersive storytelling.
                       Build your character, explore vast worlds, and engage in strategic combat.
                     </p>
-                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${
-                      isGameSection ? 'text-white' : 'text-gray-900'
-                    }`}>Key Features:</h4>
-                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-purple-200' : 'text-gray-600'
-                    }`}>
+                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
+                      }`}>Key Features:</h4>
+                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${isGameSection ? 'text-purple-200' : 'text-gray-600'
+                      }`}>
                       <li>• Character progression system</li>
                       <li>• Quest-driven narrative</li>
                       <li>• Strategic turn-based combat</li>
                       <li>• Expansive world exploration</li>
                     </ul>
                     <div className="flex gap-4">
-                      <Link 
+                      <Link
                         href="https://unlucky-dwarf.web.app/games/rpg.html"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -655,7 +637,7 @@ export default function Home() {
                       >
                         <span className="mr-2">View Game</span>
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
                         </svg>
                       </Link>
                     </div>
@@ -663,38 +645,33 @@ export default function Home() {
                 </div>
 
                 {/* Tenis */}
-                <div id="tenis" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${
-                  isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
-                }`}>
+                <div id="tenis" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
+                  }`}>
                   <div className="p-8">
-                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-white' : 'text-gray-900'
-                    }`}>Tenis</h3>
+                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
+                      }`}>Tenis</h3>
                     <div className="flex flex-wrap gap-2 mb-6">
                       <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Unity</span>
                       <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">C#</span>
                       <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Sports</span>
                     </div>
-                    
-                    <p className={`mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-purple-200' : 'text-gray-600'
-                    }`}>
-                      Realistic tennis simulation with accurate physics and competitive gameplay. 
+
+                    <p className={`mb-4 transition-colors duration-1000 ${isGameSection ? 'text-purple-200' : 'text-gray-600'
+                      }`}>
+                      Realistic tennis simulation with accurate physics and competitive gameplay.
                       Master your serves, volleys, and court positioning in this engaging sports game.
                     </p>
-                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${
-                      isGameSection ? 'text-white' : 'text-gray-900'
-                    }`}>Key Features:</h4>
-                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-purple-200' : 'text-gray-600'
-                    }`}>
+                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
+                      }`}>Key Features:</h4>
+                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${isGameSection ? 'text-purple-200' : 'text-gray-600'
+                      }`}>
                       <li>• Realistic tennis physics</li>
                       <li>• Multiple court surfaces</li>
                       <li>• Tournament progression</li>
                       <li>• Skill-based gameplay</li>
                     </ul>
                     <div className="flex gap-4">
-                      <Link 
+                      <Link
                         href="https://unlucky-dwarf.web.app/games/tenis.html"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -702,7 +679,7 @@ export default function Home() {
                       >
                         <span className="mr-2">View Game</span>
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
                         </svg>
                       </Link>
                     </div>
@@ -710,38 +687,33 @@ export default function Home() {
                 </div>
 
                 {/* Nightmare 2.5D */}
-                <div id="nightmare-2d" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${
-                  isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
-                }`}>
+                <div id="nightmare-2d" className={`mb-16 rounded-lg shadow-sm overflow-hidden transition-colors duration-1000 ${isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
+                  }`}>
                   <div className="p-8">
-                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-white' : 'text-gray-900'
-                    }`}>Nightmare 2.5D</h3>
+                    <h3 className={`text-3xl font-medium mb-4 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
+                      }`}>Nightmare 2.5D</h3>
                     <div className="flex flex-wrap gap-2 mb-6">
                       <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">Unity</span>
                       <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">C#</span>
                       <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Horror</span>
                     </div>
-                    
-                    <p className={`mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-purple-200' : 'text-gray-600'
-                    }`}>
-                      Atmospheric horror game with 2.5D perspective delivering psychological thrills. 
+
+                    <p className={`mb-4 transition-colors duration-1000 ${isGameSection ? 'text-purple-200' : 'text-gray-600'
+                      }`}>
+                      Atmospheric horror game with 2.5D perspective delivering psychological thrills.
                       Navigate through haunting environments while uncovering the mysteries of your nightmares.
                     </p>
-                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${
-                      isGameSection ? 'text-white' : 'text-gray-900'
-                    }`}>Key Features:</h4>
-                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${
-                      isGameSection ? 'text-purple-200' : 'text-gray-600'
-                    }`}>
+                    <h4 className={`font-medium mb-2 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
+                      }`}>Key Features:</h4>
+                    <ul className={`space-y-1 mb-4 transition-colors duration-1000 ${isGameSection ? 'text-purple-200' : 'text-gray-600'
+                      }`}>
                       <li>• Atmospheric 2.5D graphics</li>
                       <li>• Psychological horror elements</li>
                       <li>• Immersive sound design</li>
                       <li>• Mystery-driven narrative</li>
                     </ul>
                     <div className="flex gap-4">
-                      <Link 
+                      <Link
                         href="https://unlucky-dwarf.web.app/games/nightmare.html"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -749,7 +721,7 @@ export default function Home() {
                       >
                         <span className="mr-2">View Game</span>
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                          <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
                         </svg>
                       </Link>
                     </div>
@@ -761,12 +733,10 @@ export default function Home() {
 
             {/* Navigation Sidebar */}
             <div className="hidden lg:block w-64 sticky top-8 self-start">
-              <div className={`rounded-lg shadow-sm p-6 transition-colors duration-1000 ${
-                isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
-              }`}>
-                <h4 className={`font-medium mb-4 transition-colors duration-1000 ${
-                  isGameSection ? 'text-white' : 'text-gray-900'
-                }`}>Projects</h4>
+              <div className={`rounded-lg shadow-sm p-6 transition-colors duration-1000 ${isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
+                }`}>
+                <h4 className={`font-medium mb-4 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
+                  }`}>Projects</h4>
                 <nav className="space-y-3">
                   {[
                     { id: 'finances', name: 'Finances', color: 'bg-blue-500', category: 'web' },
@@ -782,30 +752,26 @@ export default function Home() {
                   ].map((project) => (
                     <div key={project.id}>
                       {project.id === 'hard-roots' && (
-                        <div className={`text-xs font-medium mb-2 mt-4 transition-colors duration-1000 ${
-                          isGameSection ? 'text-purple-300' : 'text-gray-500'
-                        }`}>
+                        <div className={`text-xs font-medium mb-2 mt-4 transition-colors duration-1000 ${isGameSection ? 'text-purple-300' : 'text-gray-500'
+                          }`}>
                           GAMES
                         </div>
                       )}
                       <button
                         onClick={() => scrollToProject(project.id)}
-                        className={`flex items-center w-full text-left p-3 rounded-lg transition-all ${
-                          activeProject === project.id 
+                        className={`flex items-center w-full text-left p-3 rounded-lg transition-all ${activeProject === project.id
                             ? (isGameSection ? 'bg-purple-800/50 shadow-sm' : 'bg-gray-100 shadow-sm')
                             : (isGameSection ? 'hover:bg-gray-700/50' : 'hover:bg-gray-50')
-                        }`}
-                      >
-                        <div 
-                          className={`w-3 h-3 rounded-full mr-3 ${project.color} ${
-                            activeProject === project.id ? 'ring-2 ring-offset-2 ring-gray-300' : ''
                           }`}
+                      >
+                        <div
+                          className={`w-3 h-3 rounded-full mr-3 ${project.color} ${activeProject === project.id ? 'ring-2 ring-offset-2 ring-gray-300' : ''
+                            }`}
                         />
-                        <span className={`transition-colors duration-1000 ${
-                          activeProject === project.id 
+                        <span className={`transition-colors duration-1000 ${activeProject === project.id
                             ? (isGameSection ? 'font-medium text-white' : 'font-medium text-gray-900')
                             : (isGameSection ? 'text-purple-200' : 'text-gray-600')
-                        }`}>
+                          }`}>
                           {project.name}
                         </span>
                       </button>
