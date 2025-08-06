@@ -8,6 +8,8 @@ export default function Home() {
   const [activeProject, setActiveProject] = useState("orilla-arquitectura");
   const [isGameSection, setIsGameSection] = useState(false);
   const [showTechnicalDetails, setShowTechnicalDetails] = useState(false);
+  const [isInProjectsSection, setIsInProjectsSection] = useState(false);
+  const [sidebarTop, setSidebarTop] = useState(32); // 32px = top-8
 
   // Calculate years that have passed since January of 2020
   const calculateYearsOfExperience = () => {
@@ -24,6 +26,40 @@ export default function Home() {
     const handleScroll = () => {
       const projectSections = ['orilla-arquitectura', 'finances', 'encarga', 'finances-next', 'mini-order', 'aws-lambda-proxy', 'hard-roots', 'karts', 'rpg', 'tenis', 'nightmare-2d'];
 
+      // Check if we're in the "All Projects" section
+      const allProjectsSection = document.getElementById('all-projects-section');
+      if (allProjectsSection) {
+        const rect = allProjectsSection.getBoundingClientRect();
+        // Show sidebar when the section is visible (more generous margin)
+        const isInProjects = rect.top <= window.innerHeight * 0.5 && rect.bottom >= -100;
+        setIsInProjectsSection(isInProjects);
+
+        // Calculate dynamic top position for sidebar
+        if (isInProjects) {
+          const sectionTop = rect.top;
+          const minTop = 32; // Minimum distance from top (2rem)
+          const maxTop = Math.min(200, window.innerHeight * 0.1); // Maximum offset
+          
+          if (sectionTop > 0) {
+            // Section is below viewport top, use dynamic positioning
+            const dynamicTop = Math.max(minTop, Math.min(maxTop, sectionTop + minTop));
+            setSidebarTop(dynamicTop);
+          } else {
+            // Section has scrolled past top, stick to minimum
+            setSidebarTop(minTop);
+          }
+        }
+        
+        // Debug logging (remove in production)
+        console.log('All Projects Section:', {
+          top: rect.top,
+          bottom: rect.bottom,
+          windowHeight: window.innerHeight,
+          isInProjects,
+          sidebarTop: isInProjects ? sidebarTop : 'hidden'
+        });
+      }
+
       // Check if we're in the game section
       const gameSection = document.getElementById('games-section');
       if (gameSection) {
@@ -32,21 +68,35 @@ export default function Home() {
         setIsGameSection(isInGameSection);
       }
 
+      // Find the active project section based on scroll position
+      let activeProjectFound = false;
+      const viewportCenter = window.innerHeight / 2;
+      
       for (const projectId of projectSections) {
         const element = document.getElementById(projectId);
-        if (element) {
+        if (element && !activeProjectFound) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          // Check if element is in the center viewport area
+          if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
             setActiveProject(projectId);
-            break;
+            activeProjectFound = true;
           }
         }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    // Call handleScroll initially to set the correct active project on page load
+    handleScroll();
+
+    // Use both scroll and resize events for better reliability
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, [sidebarTop]);
 
   const scrollToProject = (projectId: string) => {
     const element = document.getElementById(projectId);
@@ -382,7 +432,7 @@ export default function Home() {
       </section>
 
       {/* Detailed Projects Section with Navigation */}
-      <section className="container mx-auto px-4 py-16">
+      <section id="all-projects-section" className="container mx-auto px-4 py-16">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-medium mb-12 text-center">All Projects</h2>
 
@@ -994,7 +1044,12 @@ export default function Home() {
             </div>
 
             {/* Navigation Sidebar */}
-            <div className="hidden lg:block w-64 sticky top-8 self-start">
+            <div 
+              className={`hidden lg:block w-64 fixed right-8 transition-all duration-300 ${
+                isInProjectsSection ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8 pointer-events-none'
+              }`}
+              style={{ top: `${sidebarTop}px` }}
+            >
               <div className={`rounded-lg shadow-sm p-6 transition-colors duration-1000 ${isGameSection ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white'
                 }`}>
                 <h4 className={`font-medium mb-4 transition-colors duration-1000 ${isGameSection ? 'text-white' : 'text-gray-900'
