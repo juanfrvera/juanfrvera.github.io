@@ -187,7 +187,7 @@ export default function Home() {
       </div>
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
             <Image
               src="/mountains-cut.jpg"
@@ -246,8 +246,9 @@ export default function Home() {
       </section>
 
       {/* Top Projects Summary */}
-      <section className="container mx-auto px-4 py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-medium mb-12 text-center">Featured Projects</h2>
           <div className="grid md:grid-cols-3 gap-8">
 
@@ -328,12 +329,13 @@ export default function Home() {
             </div>
 
           </div>
+          </div>
         </div>
       </section>
 
       {/* Skills Section */}
       <section className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-medium mb-12 text-center">Technical Skills</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -371,8 +373,9 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section className="container mx-auto px-4 py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-medium mb-12 text-center">Professional Experience</h2>
           <div className="space-y-8">
 
@@ -427,6 +430,7 @@ export default function Home() {
                 <li>• Enabled user customization for landing pages and dashboards</li>
               </ul>
             </div>
+          </div>
           </div>
         </div>
       </section>
@@ -1103,12 +1107,14 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section className="container mx-auto px-4 py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-medium mb-8">Education</h2>
-          <div className="bg-gray-50 p-8 rounded-lg inline-block">
-            <h3 className="text-xl font-medium text-gray-900 mb-2">Information Systems Engineer</h3>
-            <p className="text-gray-600">2016 - 2021</p>
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto text-center">
+            <h2 className="text-3xl font-medium mb-8">Education</h2>
+            <div className="bg-white p-8 rounded-lg inline-block shadow-sm">
+              <h3 className="text-xl font-medium text-gray-900 mb-2">Information Systems Engineer</h3>
+              <p className="text-gray-600">2016 - 2021</p>
+            </div>
           </div>
         </div>
       </section>
