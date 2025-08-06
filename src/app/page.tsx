@@ -253,80 +253,74 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
 
             {/* Orilla Arquitectura Project */}
-            <div className="group bg-white rounded-lg shadow-sm overflow-hidden">
-              <h3 className="text-2xl font-medium mb-4 p-6 pb-0">Orilla Arquitectura</h3>
-              <Link
-                href="https://orillaarquitectura.com.ar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="mb-4 px-6">
-                  <Image
-                    src="/orilla.jpg"
-                    alt="Orilla Arquitectura website screenshot"
-                    width={600}
-                    height={400}
-                    className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
-                  />
-                </div>
-                <div className="px-6 pb-6">
-                  <p className="text-gray-600 mb-2">Next.js and Google Cloud Platform</p>
-                  <p className="text-gray-600">Professional architecture firm website with admin-managed content</p>
-                </div>
-              </Link>
-            </div>
+            <Link
+              href="https://orillaarquitectura.com.ar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer block"
+            >
+              <h3 className="text-2xl font-medium mb-4 p-6 pb-0 group-hover:text-blue-600 transition-colors">Orilla Arquitectura</h3>
+              <div className="mb-4 px-6">
+                <Image
+                  src="/orilla.jpg"
+                  alt="Orilla Arquitectura website screenshot"
+                  width={600}
+                  height={400}
+                  className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div className="px-6 pb-6">
+                <p className="text-gray-600 mb-2">Next.js and Google Cloud Platform</p>
+                <p className="text-gray-600">Professional architecture firm website with admin-managed content</p>
+              </div>
+            </Link>
 
             {/* Finances Project */}
-            <div className="group bg-white rounded-lg shadow-sm overflow-hidden">
-              <h3 className="text-2xl font-medium mb-4 p-6 pb-0">Finances</h3>
-              <Link
-                href="https://juanvera.dev/finances"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="mb-4 px-6">
-                  <Image
-                    src="/finances.png"
-                    alt="Finances app screenshot"
-                    width={600}
-                    height={400}
-                    className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
-                  />
-                </div>
-                <div className="px-6 pb-6">
-                  <p className="text-gray-600 mb-2">SvelteKit and GitHub Pages</p>
-                  <p className="text-gray-600">Manage your accounts, set reminders for debts and services</p>
-                </div>
-              </Link>
-            </div>
+            <Link
+              href="https://juanvera.dev/finances"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer block"
+            >
+              <h3 className="text-2xl font-medium mb-4 p-6 pb-0 group-hover:text-blue-600 transition-colors">Finances</h3>
+              <div className="mb-4 px-6">
+                <Image
+                  src="/finances.png"
+                  alt="Finances app screenshot"
+                  width={600}
+                  height={400}
+                  className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div className="px-6 pb-6">
+                <p className="text-gray-600 mb-2">SvelteKit and GitHub Pages</p>
+                <p className="text-gray-600">Manage your accounts, set reminders for debts and services</p>
+              </div>
+            </Link>
 
             {/* Encarga Project */}
-            <div className="group bg-white rounded-lg shadow-sm overflow-hidden">
-              <h3 className="text-2xl font-medium mb-4 p-6 pb-0">Encarga</h3>
-              <Link
-                href="https://encargarpedido.web.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="mb-4 px-6">
-                  <Image
-                    src="/encarga.webp"
-                    alt="Encarga app screenshot"
-                    width={600}
-                    height={400}
-                    className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
-                  />
-                </div>
-                <div className="px-6 pb-6 space-y-1 text-gray-600">
-                  <p>Create your shop</p>
-                  <p>Let your clients order</p>
-                  <p>Receive automatic messages</p>
-                </div>
-              </Link>
-            </div>
+            <Link
+              href="https://encargarpedido.web.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer block"
+            >
+              <h3 className="text-2xl font-medium mb-4 p-6 pb-0 group-hover:text-blue-600 transition-colors">Encarga</h3>
+              <div className="mb-4 px-6">
+                <Image
+                  src="/encarga.webp"
+                  alt="Encarga app screenshot"
+                  width={600}
+                  height={400}
+                  className="w-full h-64 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
+                />
+              </div>
+              <div className="px-6 pb-6 space-y-1 text-gray-600">
+                <p>Create your shop</p>
+                <p>Let your clients order</p>
+                <p>Receive automatic messages</p>
+              </div>
+            </Link>
 
           </div>
           </div>
