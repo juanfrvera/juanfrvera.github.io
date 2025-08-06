@@ -230,9 +230,8 @@ export default function Home() {
           </div>
 
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl md:max-w-none text-center mx-auto">
-            Senior Full Stack Developer specializing in contact center automation and web applications.
-            I create minimalist websites focusing on functionality and performance,
-            keeping the essence of each application.
+            I am ready to bring your idea to life with full-stack expertise and a focus on 
+            user-centered design. Let&apos;s build something amazing together.
           </p>
 
           <div className="flex justify-center mb-16">
@@ -1180,7 +1179,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-medium mb-8">Contact me!</h2>
             <p className="text-lg text-gray-600 mb-12">
-              Let's connect and discuss opportunities to work together
+              Let&apos;s connect and discuss opportunities to work together
             </p>
             <div className="flex justify-center gap-8">
               <Link
