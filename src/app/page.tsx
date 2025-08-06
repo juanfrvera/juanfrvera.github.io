@@ -211,7 +211,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
+          <div className="flex flex-col md:flex-row items-center gap-4 mb-8">
             <Image
               src="/mountains-cut.jpg"
               alt="Juan Vera profile picture"
@@ -220,7 +220,7 @@ export default function Home() {
               className="w-48 h-48 object-cover rounded-full flex-shrink-0"
               priority
             />
-            <div className="text-center md:text-left flex-1">
+            <div className="text-center flex-1">
               <h1 className="text-4xl md:text-6xl font-light mb-8 leading-tight">
                 Hello, I&apos;m Juan Vera, a{" "}
                 <span className="font-medium">Full Stack Engineer</span>{" "}
@@ -229,7 +229,7 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl md:max-w-none">
+          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl md:max-w-none text-center mx-auto">
             Senior Full Stack Developer specializing in contact center automation and web applications.
             I create minimalist websites focusing on functionality and performance,
             keeping the essence of each application.
