@@ -1103,11 +1103,49 @@ export default function Home() {
       {/* Education Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-3xl font-medium mb-8">Education</h2>
-            <div className="bg-white p-8 rounded-lg inline-block shadow-sm">
-              <h3 className="text-xl font-medium text-gray-900 mb-2">Information Systems Engineer</h3>
-              <p className="text-gray-600">2016 - 2021</p>
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-medium mb-12 text-center">Education</h2>
+            <div className="space-y-8">
+
+              {/* Information Systems Engineer */}
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-medium text-gray-900">Information Systems Engineer</h3>
+                    <p className="text-lg text-blue-600">Universidad Tecnológica Nacional, Argentina</p>
+                  </div>
+                  <span className="text-gray-600 mt-2 md:mt-0">2016 - 2021</span>
+                </div>
+                <ul className="text-gray-600 space-y-2">
+                  <li>• Graduated with a degree in Information Systems Engineering</li>
+                  <li>• Comprehensive curriculum covering software development, systems analysis, and project management</li>
+                  <li>• Specialized in modern programming languages, databases, and software architecture</li>
+                  <li>• Completed advanced coursework in web technologies, mobile development, and cloud computing</li>
+                  <li>• Advanced networking protocols, security concepts, and encryption techniques</li>
+                  <li>• Extensive mathematics including derivatives, integrals, mathematical analysis, and algebra</li>
+                  <li>• Operations research and optimization techniques for function optimization</li>
+                  <li>• Database design and normalization principles for efficient data management</li>
+                </ul>
+              </div>
+
+              {/* Computer Technician */}
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-medium text-gray-900">Computer Technician</h3>
+                    <p className="text-lg text-blue-600">Technical High School</p>
+                  </div>
+                  <span className="text-gray-600 mt-2 md:mt-0">2009 - 2015</span>
+                </div>
+                <ul className="text-gray-600 space-y-2">
+                  <li>• Graduated as a Computer Technician with a strong foundation in technology</li>
+                  <li>• Learned programming basics including logic, algorithms, and problem-solving</li>
+                  <li>• Extensive training in computer hardware, assembly, and troubleshooting</li>
+                  <li>• Early exposure to networking, databases, and system administration</li>
+                  <li>• Built solid foundation that led to pursuing university-level computer science education</li>
+                </ul>
+              </div>
+
             </div>
           </div>
         </div>
