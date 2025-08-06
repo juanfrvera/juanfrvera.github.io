@@ -30,8 +30,31 @@ export default function Home() {
       const allProjectsSection = document.getElementById('all-projects-section');
       if (allProjectsSection) {
         const rect = allProjectsSection.getBoundingClientRect();
-        // Show sidebar when the section is visible (more generous margin)
-        const isInProjects = rect.top <= window.innerHeight * 0.5 && rect.bottom >= -100;
+        
+        // Check if we've scrolled past the All Projects section into Education or Contact
+        const educationSection = document.getElementById('education-section');
+        const contactSection = document.getElementById('contact-section');
+        
+        let isInEducationOrContact = false;
+        
+        // Check if Education section is visible in viewport
+        if (educationSection) {
+          const educationRect = educationSection.getBoundingClientRect();
+          if (educationRect.top <= window.innerHeight * 0.5) {
+            isInEducationOrContact = true;
+          }
+        }
+        
+        // Check if Contact section is visible in viewport
+        if (contactSection) {
+          const contactRect = contactSection.getBoundingClientRect();
+          if (contactRect.top <= window.innerHeight * 0.5) {
+            isInEducationOrContact = true;
+          }
+        }
+        
+        // Show sidebar when in All Projects section and not in Education/Contact sections
+        const isInProjects = rect.top <= window.innerHeight * 0.5 && rect.bottom >= -100 && !isInEducationOrContact;
         setIsInProjectsSection(isInProjects);
 
         // Calculate dynamic top position for sidebar
@@ -1101,7 +1124,7 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section className="py-16 bg-gray-50">
+      <section id="education-section" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-medium mb-12 text-center">Education</h2>
@@ -1146,6 +1169,47 @@ export default function Home() {
                 </ul>
               </div>
 
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact-section" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto text-center">
+            <h2 className="text-3xl font-medium mb-8">Contact me!</h2>
+            <p className="text-lg text-gray-600 mb-12">
+              Let's connect and discuss opportunities to work together
+            </p>
+            <div className="flex justify-center gap-8">
+              <Link
+                href="mailto:juanfrvera.work@gmail.com"
+                className="group flex flex-col items-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-700 transition-colors">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h3.819l6.545 4.91 6.545-4.91h3.819A1.636 1.636 0 0 1 24 5.457z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-medium text-gray-900 mb-2">Email</h3>
+                <p className="text-blue-600 group-hover:text-blue-700 transition-colors">juanfrvera.work@gmail.com</p>
+              </Link>
+
+              <Link
+                href="https://www.linkedin.com/in/juan-vera/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-700 transition-colors">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-medium text-gray-900 mb-2">LinkedIn</h3>
+                <p className="text-blue-600 group-hover:text-blue-700 transition-colors">Connect with me</p>
+              </Link>
             </div>
           </div>
         </div>
